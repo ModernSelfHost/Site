@@ -187,51 +187,18 @@
         <div class="page-wrap">
           <div class="explore-heading">
             <div>
-              <span class="section-kicker">A good place to begin</span>
-              <h2>Little things, <span class="heading-light">made yours.</span></h2>
+              <span class="section-kicker">From the OpenAppStore catalog</span>
+              <h2>Find your next <span class="heading-light">favorite.</span></h2>
             </div>
-            <p>Curious what you could host? Here are a few well-known open-source projects to explore.</p>
+            <p>Explore self-hosted apps, with their catalog icons and details kept up to date from OpenAppStore.</p>
           </div>
-          <div class="app-grid">
-            <a class="app-card" href="https://immich.app/" target="_blank" rel="noreferrer">
-              <span class="app-logo app-logo-photo" aria-hidden="true">
-                <svg viewBox="0 0 36 36" fill="none"><rect x="6" y="6" width="24" height="24" rx="8" stroke="currentColor" stroke-width="2.2" /><circle cx="14" cy="14" r="2.4" fill="currentColor" /><path d="m8 26 7-7 5 5 3-3 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
-              </span>
-              <span class="app-type">PHOTOS & MEMORIES</span>
-              <strong>Immich</strong>
-              <span class="app-description">A home for your photos and videos.</span>
-              <span class="app-arrow" aria-label="Visit Immich">↗</span>
-            </a>
-            <a class="app-card" href="https://jellyfin.org/" target="_blank" rel="noreferrer">
-              <span class="app-logo app-logo-media" aria-hidden="true">
-                <svg viewBox="0 0 36 36" fill="none"><path d="M18 5.5 31 28H5L18 5.5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" /><path d="m16 13 8 5-8 5V13Z" fill="currentColor" /></svg>
-              </span>
-              <span class="app-type">MOVIES & MUSIC</span>
-              <strong>Jellyfin</strong>
-              <span class="app-description">Enjoy your own media library.</span>
-              <span class="app-arrow" aria-label="Visit Jellyfin">↗</span>
-            </a>
-            <a class="app-card" href="https://nextcloud.com/" target="_blank" rel="noreferrer">
-              <span class="app-logo app-logo-files" aria-hidden="true">
-                <svg viewBox="0 0 36 36" fill="none"><path d="M11 25.5a6.5 6.5 0 0 1-.7-13 8 8 0 0 1 15.5 2 5.5 5.5 0 0 1-.3 11H11Z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /><path d="M18 17v11m-4-4 4 4 4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
-              </span>
-              <span class="app-type">FILES & SHARING</span>
-              <strong>Nextcloud</strong>
-              <span class="app-description">Keep files and collaboration close.</span>
-              <span class="app-arrow" aria-label="Visit Nextcloud">↗</span>
-            </a>
-            <a class="app-card" href="https://github.com/dani-garcia/vaultwarden" target="_blank" rel="noreferrer">
-              <span class="app-logo app-logo-password" aria-hidden="true">
-                <svg viewBox="0 0 36 36" fill="none"><rect x="7" y="15" width="22" height="16" rx="3" stroke="currentColor" stroke-width="2.2" /><path d="M12 15v-4a6 6 0 0 1 12 0v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /><circle cx="18" cy="22" r="2" fill="currentColor" /><path d="M18 24v3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>
-              </span>
-              <span class="app-type">PASSWORDS</span>
-              <strong>Vaultwarden</strong>
-              <span class="app-description">An alternative server for Bitwarden clients.</span>
-              <span class="app-arrow" aria-label="Visit Vaultwarden">↗</span>
-            </a>
+          <p class="app-status" id="app-status" role="status" aria-live="polite">Loading apps from OpenAppStore…</p>
+          <div class="app-grid" id="app-grid" aria-describedby="app-status"></div>
+          <div class="app-load-error" id="app-load-error" role="alert" hidden>
+            The OpenAppStore catalog couldn’t be loaded. Please try again later.
           </div>
           <p class="app-disclaimer">
-            These are independent projects, not recommendations or endorsements. Check each project’s documentation and security practices before use.
+            App names, descriptions, versions, and icons are provided by OpenAppStore. Apps are independent projects; review their documentation and security practices before use.
           </p>
         </div>
       </section>
