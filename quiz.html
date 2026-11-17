@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Take a beginner-friendly self-hosting quiz for app suggestions based on your goals, interests, experience, and hardware.">
+    <meta name="theme-color" content="#f7f8f3">
+    <title>Self-Hosting Discovery Quiz — Modern Self Host</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/index.html" aria-label="Modern Self Host home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none"><path d="M18 3.5 31 11v14L18 32.5 5 25V11L18 3.5Z" fill="currentColor" /><path d="m12 18 4 4 8-9" stroke="#F7F8F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </span>
+        <span>modern<span class="brand-light">selfhost</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="/index.html">Home</a>
+        <a href="/apps.html">App catalog</a>
+        <a href="/getting-started.html">Getting started</a>
+        <a href="/quiz.html" aria-current="page">Take the quiz</a>
+        <a class="nav-github" href="https://github.com/ModernSelfHost/Site" target="_blank" rel="noreferrer">View on GitHub<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="quiz-page section-pad">
+        <div class="page-wrap">
+          <div class="quiz-heading">
+            <span class="section-kicker">Your self-hosting starting point</span>
+            <h1>Find apps that <span class="heading-light">fit your life.</span></h1>
+            <p>Answer a few quick questions for beginner-friendly recommendations from the OpenAppStore catalog. Your answers stay in your browser and aren’t sent anywhere.</p>
+          </div>
+          <form class="quiz-form" id="discovery-quiz">
+            <fieldset class="quiz-question">
+              <legend><span class="quiz-number">01</span><span>What’s your main goal right now?</span></legend>
+              <p class="quiz-hint">Pick the one that feels strongest.</p>
+              <div class="quiz-options quiz-options-grid">
+                <label class="quiz-option"><input type="radio" name="goal" value="privacy" required><span>Take back control of my data</span></label>
+                <label class="quiz-option"><input type="radio" name="goal" value="subscriptions"><span>Replace services I pay for</span></label>
+                <label class="quiz-option"><input type="radio" name="goal" value="media"><span>Stream my own movies, shows, and music</span></label>
+                <label class="quiz-option"><input type="radio" name="goal" value="organize"><span>Organize photos, files, or paper documents</span></label>
+                <label class="quiz-option"><input type="radio" name="goal" value="network"><span>Block ads and trackers on my network</span></label>
+                <label class="quiz-option"><input type="radio" name="goal" value="home"><span>Manage my smart home</span></label>
+                <label class="quiz-option"><input type="radio" name="goal" value="learn"><span>Learn self-hosting as a hobby</span></label>
+                <label class="quiz-option"><input type="radio" name="goal" value="monitor"><span>Monitor services and build a dashboard</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="quiz-question">
+              <legend><span class="quiz-number">02</span><span>What hardware do you have in mind?</span></legend>
+              <p class="quiz-hint">Choose the closest fit.</p>
+              <div class="quiz-options quiz-options-grid">
+                <label class="quiz-option"><input type="radio" name="hardware" value="pi" required><span>Raspberry Pi or low-power device</span></label>
+                <label class="quiz-option"><input type="radio" name="hardware" value="nas"><span>Mini PC, old desktop, or NAS</span></label>
+                <label class="quiz-option"><input type="radio" name="hardware" value="vps"><span>VPS (cloud server)</span></label>
+                <label class="quiz-option"><input type="radio" name="hardware" value="unsure"><span>Not sure yet</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="quiz-question">
+              <legend><span class="quiz-number">03</span><span>How comfortable are you with tech?</span></legend>
+              <p class="quiz-hint">There’s no wrong answer; this just helps tailor your first steps.</p>
+              <div class="quiz-options quiz-options-grid">
+                <label class="quiz-option"><input type="radio" name="experience" value="beginner" required><span>Beginner — new to Docker and Linux</span></label>
+                <label class="quiz-option"><input type="radio" name="experience" value="intermediate"><span>Intermediate — happy to follow guides</span></label>
+                <label class="quiz-option"><input type="radio" name="experience" value="advanced"><span>Advanced — comfortable with configs</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="quiz-question">
+              <legend><span class="quiz-number">04</span><span>Which areas interest you?</span></legend>
+              <p class="quiz-hint">Select all that apply, or skip this question.</p>
+              <div class="quiz-options quiz-options-grid">
+                <label class="quiz-option"><input type="checkbox" name="interests" value="media"><span>Media and photos</span></label>
+                <label class="quiz-option"><input type="checkbox" name="interests" value="files"><span>Files and documents</span></label>
+                <label class="quiz-option"><input type="checkbox" name="interests" value="network"><span>Network tools</span></label>
+                <label class="quiz-option"><input type="checkbox" name="interests" value="security"><span>Password management</span></label>
+                <label class="quiz-option"><input type="checkbox" name="interests" value="home"><span>Home automation</span></label>
+                <label class="quiz-option"><input type="checkbox" name="interests" value="monitoring"><span>Monitoring and dashboards</span></label>
+                <label class="quiz-option"><input type="checkbox" name="interests" value="dev"><span>Development tools</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="quiz-question">
+              <legend><span class="quiz-number">05</span><span>Do you already have Docker running?</span></legend>
+              <div class="quiz-options quiz-options-grid">
+                <label class="quiz-option"><input type="radio" name="docker" value="yes" required><span>Yes</span></label>
+                <label class="quiz-option"><input type="radio" name="docker" value="no"><span>No, not yet</span></label>
+                <label class="quiz-option"><input type="radio" name="docker" value="unsure"><span>I’m not sure what Docker is</span></label>
+              </div>
+            </fieldset>
+
+            <div class="quiz-submit-row">
+              <button class="button button-primary" id="quiz-submit" type="submit" disabled>
+                Show my app matches
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <span class="quiz-submit-hint" id="quiz-catalog-status" role="status">Loading the app catalog…</span>
+            </div>
+          </form>
+          <section class="quiz-results" id="quiz-results" aria-live="polite" aria-labelledby="quiz-result-title" hidden></section>
+          <p class="quiz-page-note">Recommendations are a starting point, not endorsements. Review each project’s setup guide, requirements, and security practices. <a href="/getting-started.html">Read the getting-started guide.</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer page-wrap">
+      <a class="brand footer-brand" href="/index.html" aria-label="Modern Self Host home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.5 31 11v14L18 32.5 5 25V11L18 3.5Z" fill="currentColor" /><path d="m12 18 4 4 8-9" stroke="#F7F8F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+        <span>modern<span class="brand-light">selfhost</span></span>
+      </a>
+      <span class="footer-note">Make the internet a little more yours.</span>
+      <a class="footer-link" href="/apps.html">Browse the catalog<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+    </footer>
+  </body>
+</html>

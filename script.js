@@ -3,6 +3,9 @@ const navigation = document.querySelector("#primary-nav");
 const appGrid = document.querySelector("#app-grid");
 const appStatus = document.querySelector("#app-status");
 const appLoadError = document.querySelector("#app-load-error");
+const appSearch = document.querySelector("#app-search");
+const categoryFilter = document.querySelector("#category-filter");
+const appEmpty = document.querySelector("#app-empty");
 const quizForm = document.querySelector("#discovery-quiz");
 const quizSubmit = document.querySelector("#quiz-submit");
 const quizCatalogStatus = document.querySelector("#quiz-catalog-status");
@@ -67,8 +70,40 @@ function createAppCard(app) {
   meta.append(version, runtime);
   card.append(meta);
 
+  const details = document.createElement("a");
+  details.className = "app-detail-link";
+  details.href = new URL(app.manifest, catalogUrl).href;
+  details.target = "_blank";
+  details.rel = "noopener noreferrer";
+  details.textContent = "View setup details ↗";
+  card.append(details);
+
   return card;
 }
+
+function renderCatalog() {
+  if (!appGrid || !appStatus) return;
+
+  const query = appSearch?.value.trim().toLocaleLowerCase() ?? "";
+  const category = categoryFilter?.value ?? "";
+  const filteredApps = appCatalog.filter((app) => {
+    const matchesQuery = !query || `${app.name} ${app.description} ${app.category}`.toLocaleLowerCase().includes(query);
+    return matchesQuery && (!category || app.category === category);
+  });
+  const limit = Number(appGrid.dataset.catalogLimit);
+  const visibleApps = Number.isInteger(limit) && limit > 0
+    ? filteredApps.slice(0, limit)
+    : filteredApps;
+
+  appGrid.replaceChildren(...visibleApps.map(createAppCard));
+  appStatus.textContent = visibleApps.length === appCatalog.length
+    ? `${appCatalog.length} apps from OpenAppStore`
+    : `Showing ${visibleApps.length} of ${appCatalog.length} apps`;
+  if (appEmpty) appEmpty.hidden = visibleApps.length > 0;
+}
+
+if (appSearch) appSearch.addEventListener("input", renderCatalog);
+if (categoryFilter) categoryFilter.addEventListener("change", renderCatalog);
 
 const goalRecommendations = {
   privacy: ["vaultwarden", "nextcloud", "immich", "syncthing"],
@@ -247,7 +282,7 @@ if (quizForm && quizSubmit && quizCatalogStatus && quizResults) {
 }
 
 async function loadAppCatalog() {
-  if (!appGrid || !appStatus || !appLoadError) return;
+  if (!appGrid && !quizForm) return;
 
   try {
     const response = await fetch(catalogUrl);
@@ -261,16 +296,22 @@ async function loadAppCatalog() {
     }
 
     appCatalog = catalog.apps;
-    appGrid.replaceChildren(...catalog.apps.map(createAppCard));
-    appStatus.textContent = `${catalog.apps.length} apps from OpenAppStore`;
+    if (categoryFilter) {
+      const categories = [...new Set(appCatalog.map((app) => app.category))].sort();
+      categoryFilter.replaceChildren(new Option("All categories", ""));
+      for (const category of categories) {
+        categoryFilter.add(new Option(category[0].toLocaleUpperCase() + category.slice(1), category));
+      }
+    }
+    renderCatalog();
     if (quizSubmit && quizCatalogStatus) {
       quizSubmit.disabled = false;
       quizCatalogStatus.textContent = `${catalog.apps.length} apps ready for your quiz`;
     }
   } catch (error) {
     console.error("Unable to load the OpenAppStore catalog.", error);
-    appStatus.textContent = "";
-    appLoadError.hidden = false;
+    if (appStatus) appStatus.textContent = "";
+    if (appLoadError) appLoadError.hidden = false;
     if (quizCatalogStatus) {
       quizCatalogStatus.textContent = "The app catalog couldn’t be loaded, so quiz recommendations aren’t available right now.";
     }

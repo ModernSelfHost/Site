@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Browse self-hosted apps in the Modern Self Host OpenAppStore catalog. Search by name, category, or what an app does.">
+    <meta name="theme-color" content="#f7f8f3">
+    <title>App Catalog — Modern Self Host</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/index.html" aria-label="Modern Self Host home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none"><path d="M18 3.5 31 11v14L18 32.5 5 25V11L18 3.5Z" fill="currentColor" /><path d="m12 18 4 4 8-9" stroke="#F7F8F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </span>
+        <span>modern<span class="brand-light">selfhost</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="/index.html">Home</a>
+        <a href="/apps.html" aria-current="page">App catalog</a>
+        <a href="/getting-started.html">Getting started</a>
+        <a href="/quiz.html">Take the quiz</a>
+        <a class="nav-github" href="https://github.com/ModernSelfHost/Site" target="_blank" rel="noreferrer">View on GitHub<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="catalog-page section-pad">
+        <div class="page-wrap">
+          <div class="page-heading">
+            <span class="section-kicker">The open app catalog</span>
+            <h1>Small tools.<br><span class="heading-light">Big possibilities.</span></h1>
+            <p>Explore apps you can run on hardware you control. Search by name, category, or what you’d like to do. Each listing links to its setup manifest.</p>
+          </div>
+          <div class="catalog-controls">
+            <label class="catalog-field">
+              <span>Search apps</span>
+              <input id="app-search" type="search" placeholder="Try “photos” or “monitoring”" autocomplete="off">
+            </label>
+            <label class="catalog-field catalog-category">
+              <span>Category</span>
+              <select id="category-filter">
+                <option value="">All categories</option>
+              </select>
+            </label>
+          </div>
+          <p class="app-status" id="app-status" role="status" aria-live="polite">Loading apps from OpenAppStore…</p>
+          <div class="app-grid" id="app-grid" aria-describedby="app-status"></div>
+          <p class="catalog-empty" id="app-empty" hidden>No apps match those filters. Try another search or category.</p>
+          <div class="app-load-error" id="app-load-error" role="alert" hidden>
+            The OpenAppStore catalog couldn’t be loaded. Please try again later.
+          </div>
+          <p class="app-disclaimer">
+            App names, descriptions, versions, and icons come from OpenAppStore. Apps are independent projects, not recommendations or endorsements. Review each project’s documentation, hardware requirements, and security practices before use.
+          </p>
+          <a class="inline-link catalog-back-link" href="/quiz.html">Not sure what fits? Take the discovery quiz<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer page-wrap">
+      <a class="brand footer-brand" href="/index.html" aria-label="Modern Self Host home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.5 31 11v14L18 32.5 5 25V11L18 3.5Z" fill="currentColor" /><path d="m12 18 4 4 8-9" stroke="#F7F8F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+        <span>modern<span class="brand-light">selfhost</span></span>
+      </a>
+      <span class="footer-note">Make the internet a little more yours.</span>
+      <a class="footer-link" href="https://modernselfhost.github.io/openappstore/" target="_blank" rel="noreferrer">OpenAppStore catalog<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+    </footer>
+  </body>
+</html>

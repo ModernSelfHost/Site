@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A practical beginner's guide to choosing your first self-hosted app, thinking about hardware, and planning for security and backups.">
+    <meta name="theme-color" content="#f7f8f3">
+    <title>Getting Started — Modern Self Host</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/index.html" aria-label="Modern Self Host home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none"><path d="M18 3.5 31 11v14L18 32.5 5 25V11L18 3.5Z" fill="currentColor" /><path d="m12 18 4 4 8-9" stroke="#F7F8F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </span>
+        <span>modern<span class="brand-light">selfhost</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="/index.html">Home</a>
+        <a href="/apps.html">App catalog</a>
+        <a href="/getting-started.html" aria-current="page">Getting started</a>
+        <a href="/quiz.html">Take the quiz</a>
+        <a class="nav-github" href="https://github.com/ModernSelfHost/Site" target="_blank" rel="noreferrer">View on GitHub<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="guide-hero section-pad">
+        <div class="page-wrap">
+          <span class="section-kicker">A practical first guide</span>
+          <h1>Start small.<br><span class="heading-light">Build at your pace.</span></h1>
+          <p>Self-hosting is running an app or service on hardware you control, instead of relying only on a hosted platform. You can start with one useful app and learn from there.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="/quiz.html">Find an app for you<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+            <a class="button button-text" href="/apps.html">Browse the catalog</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide-section section-pad">
+        <div class="page-wrap">
+          <div class="guide-section-heading">
+            <span class="section-kicker">One step at a time</span>
+            <h2>How to find your <span class="heading-light">first project.</span></h2>
+          </div>
+          <div class="guide-steps">
+            <article class="guide-step"><span>01</span><div><h3>Pick something you already use</h3><p>Photos, movies, files, or a smart-home service are all good starting points. Choose a problem you actually want to solve.</p></div></article>
+            <article class="guide-step"><span>02</span><div><h3>Compare a few projects</h3><p>Read the official project documentation, check how active the project is, and understand its features and limitations.</p></div></article>
+            <article class="guide-step"><span>03</span><div><h3>Check requirements before buying hardware</h3><p>Look at CPU, memory, storage, and supported architecture. Also consider ongoing costs such as electricity, a domain, or a rented server.</p></div></article>
+            <article class="guide-step"><span>04</span><div><h3>Plan backups, updates, and access</h3><p>Decide how you’ll protect your data, keep the app updated, and connect to it. Don’t expose a service to the public internet until you understand how to secure and maintain it.</p></div></article>
+            <article class="guide-step"><span>05</span><div><h3>Try one app and learn by doing</h3><p>Follow the app’s current installation guide, test it with non-critical data, and make sure you know how to restore a backup before relying on it.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide-hardware section-pad">
+        <div class="page-wrap">
+          <div class="guide-section-heading">
+            <span class="section-kicker">Choose a home for your apps</span>
+            <h2>Hardware that fits <span class="heading-light">your setup.</span></h2>
+            <p>There’s no universal best option. Match your hardware to the apps, storage, reliability, and maintenance you need.</p>
+          </div>
+          <div class="guide-cards">
+            <article class="guide-card"><span class="guide-card-tag">LOW POWER</span><h3>Raspberry Pi or small device</h3><p>Useful for lighter services, but check memory, processor, and storage requirements first.</p><p class="guide-apps"><strong>Examples to explore</strong>Vaultwarden, Pi-hole or AdGuard Home, Uptime Kuma, Syncthing, Portainer.</p><p class="guide-caution">Resource-heavy apps such as Immich or a full Home Assistant OS appliance may need more capable hardware.</p></article>
+            <article class="guide-card"><span class="guide-card-tag">AT HOME</span><h3>Mini PC, NAS, or old desktop</h3><p>A flexible option when you want more room for storage or several services. Check power use, drive health, and how you’ll handle backups.</p><p class="guide-apps"><strong>Examples to explore</strong>Immich, Jellyfin, Nextcloud, and Home Assistant OS, subject to their requirements.</p></article>
+            <article class="guide-card"><span class="guide-card-tag">CLOUD SERVER</span><h3>Virtual private server (VPS)</h3><p>A rented server can be convenient when a service needs to be reachable online. You’ll still need to manage updates, access, and backups.</p><p class="guide-apps"><strong>Examples to explore</strong>Vaultwarden, Uptime Kuma, Gitea, Portainer, Nginx Proxy Manager, and Traefik.</p><p class="guide-caution">Media and photo libraries depend on available storage, transfer limits, and bandwidth.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide-section section-pad">
+        <div class="page-wrap">
+          <div class="guide-section-heading">
+            <span class="section-kicker">A few paths from the quiz guide</span>
+            <h2>Choose a direction, <span class="heading-light">not a checklist.</span></h2>
+            <p>These are ideas for exploring, not required installation orders. Pick one app that interests you and check its documentation before you begin.</p>
+          </div>
+          <div class="path-grid">
+            <article class="path-card"><span class="guide-card-tag">EVERYDAY & PRIVACY</span><h3>Your everyday tools</h3><ol><li>Portainer</li><li>Vaultwarden</li><li>Nextcloud</li><li>Immich</li><li>Uptime Kuma</li></ol></article>
+            <article class="path-card"><span class="guide-card-tag">MEDIA</span><h3>Your media library</h3><ol><li>Portainer</li><li>Jellyfin</li><li>Immich</li><li>Nginx Proxy Manager</li><li>Uptime Kuma</li></ol></article>
+            <article class="path-card"><span class="guide-card-tag">NETWORK & SECURITY</span><h3>Your home network</h3><ol><li>Portainer</li><li>AdGuard Home or Pi-hole</li><li>Vaultwarden</li><li>Nginx Proxy Manager</li><li>Uptime Kuma</li></ol></article>
+            <article class="path-card"><span class="guide-card-tag">SMART HOME</span><h3>Your connected home</h3><ol><li>Portainer, or skip it with Home Assistant OS</li><li>Home Assistant OS</li><li>Uptime Kuma</li><li>Vaultwarden</li><li>Nginx Proxy Manager</li></ol></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide-safety section-pad">
+        <div class="page-wrap safety-layout">
+          <div><span class="section-kicker">A note before you begin</span><h2>Running it means <span class="heading-light">looking after it.</span></h2></div>
+          <div class="safety-copy">
+            <p>Self-hosting gives you more control, but it also gives you more responsibility. Keep software current, use strong unique credentials, restrict access to what you need, and make backups that you’ve tested restoring.</p>
+            <p>A password manager, file server, or remotely accessible service can contain sensitive data. Read the project’s security guidance and understand the risks before putting sensitive information online.</p>
+            <a class="inline-link" href="/apps.html">Check app requirements in the catalog<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer page-wrap">
+      <a class="brand footer-brand" href="/index.html" aria-label="Modern Self Host home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.5 31 11v14L18 32.5 5 25V11L18 3.5Z" fill="currentColor" /><path d="m12 18 4 4 8-9" stroke="#F7F8F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+        <span>modern<span class="brand-light">selfhost</span></span>
+      </a>
+      <span class="footer-note">Make the internet a little more yours.</span>
+      <a class="footer-link" href="/quiz.html">Find your starting point<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+    </footer>
+  </body>
+</html>
