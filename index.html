@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A practical starting point for self-hosting. Discover the tools, learn the basics, and build a digital home that feels like yours."
+    >
+    <meta name="theme-color" content="#f7f8f3">
+    <title>Modern Self Host — Make the internet yours</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Modern Self Host home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none">
+            <path d="M18 3.5 31 11v14L18 32.5 5 25V11L18 3.5Z" fill="currentColor" />
+            <path d="m12 18 4 4 8-9" stroke="#F7F8F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <span>modern<span class="brand-light">selfhost</span></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="#why">Why self-host</a>
+        <a href="#explore">Explore</a>
+        <a href="#getting-started">Getting started</a>
+        <a class="nav-github" href="https://github.com/ModernSelfHost/Site" target="_blank" rel="noreferrer">
+          View on GitHub
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero page-wrap">
+        <div class="hero-copy">
+          <a class="eyebrow" href="#getting-started">
+            <span class="eyebrow-dot"></span>
+            YOUR DIGITAL LIFE, ON YOUR TERMS
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <h1>The internet.<br>Make it <span class="accent-word">yours.</span></h1>
+          <p class="hero-lede">
+            Your photos, files, and favorite services — on your terms.
+            Find your first self-hosted app and make a little more room for yourself online.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#explore">
+              Find your first app
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a class="button button-text" href="#why">What is self-hosting?</a>
+          </div>
+          <div class="hero-note">
+            <span class="note-avatars" aria-hidden="true">
+              <span class="note-avatar avatar-one">✳</span>
+              <span class="note-avatar avatar-two">⌂</span>
+              <span class="note-avatar avatar-three">↗</span>
+            </span>
+            <span>A more personal internet starts with one small step.</span>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Illustration of a personal server connecting your apps">
+          <div class="art-glow"></div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit orbit-three"></div>
+          <div class="orbit-dot dot-one"></div>
+          <div class="orbit-dot dot-two"></div>
+          <div class="orbit-dot dot-three"></div>
+          <div class="float-card float-card-top">
+            <span class="app-icon icon-photo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="3.5" y="4.5" width="17" height="15" rx="3" stroke="currentColor" stroke-width="1.7" />
+                <circle cx="9" cy="10" r="1.7" fill="currentColor" />
+                <path d="m5 17 4-4 3 3 2-2 5 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span><strong>Your photos</strong><small>Just where you want them</small></span>
+            <span class="card-check" aria-hidden="true">✓</span>
+          </div>
+          <div class="float-card float-card-bottom">
+            <span class="app-icon icon-cloud" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7.5 18.5h9a4 4 0 0 0 .4-8 5.5 5.5 0 0 0-10.7 1.1 3.5 3.5 0 0 0 1.3 6.9Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 13v7m-2.5-2.5L12 20l2.5-2.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span><strong>Your own little cloud</strong><small>Files, shared your way</small></span>
+            <span class="card-check" aria-hidden="true">✓</span>
+          </div>
+          <div class="server">
+            <div class="server-top"><span></span><span></span><span></span><i>YOUR SPACE</i></div>
+            <div class="server-screen">
+              <div class="screen-orb"><span></span></div>
+              <div class="screen-title">A home for<br>what matters.</div>
+              <div class="screen-status"><span></span> ALL YOURS</div>
+            </div>
+            <div class="server-base"><span></span><span></span><span></span><span></span><b>●</b></div>
+          </div>
+          <div class="hero-art-caption"><span></span> Your corner of the internet</div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Project values">
+        <div class="trust-inner page-wrap">
+          <span>MORE CONTROL, LESS COMPLEXITY</span>
+          <i></i>
+          <span>OPEN-SOURCE TOOLS</span>
+          <i></i>
+          <span>START AT YOUR OWN PACE</span>
+          <i></i>
+          <span>BUILT AROUND YOU</span>
+        </div>
+      </section>
+
+      <section class="why-section section-pad" id="why">
+        <div class="page-wrap why-layout">
+          <div class="section-intro">
+            <span class="section-kicker">A different kind of online</span>
+            <h2>It’s your life.<br>Keep a little more of it.</h2>
+            <p>
+              Self-hosting means running digital services for yourself instead of relying
+              entirely on someone else’s platform. You choose what to use, what to share,
+              and where your data lives.
+            </p>
+            <a class="inline-link" href="#getting-started">
+              See how to get started
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+          <div class="value-cards">
+            <article class="value-card value-card-green">
+              <span class="value-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 19 6v5c0 4.7-3 8.3-7 10-4-1.7-7-5.3-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" /><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </span>
+              <h3>Your space, your rules</h3>
+              <p>Make thoughtful choices about who runs the services you rely on and where your data lives.</p>
+              <span class="card-number">01 / CONTROL</span>
+            </article>
+            <article class="value-card value-card-lilac">
+              <span class="value-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" /><path d="m19 15 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /></svg>
+              </span>
+              <h3>Tools that feel like you</h3>
+              <p>Discover open-source alternatives for the everyday apps and services you already use.</p>
+              <span class="card-number">02 / CHOICE</span>
+            </article>
+            <article class="value-card value-card-peach">
+              <span class="value-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 16.5 9 11l3.5 3.5L20 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /><path d="M14.5 6H20v5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </span>
+              <h3>Learn as you go</h3>
+              <p>You don’t need a server room or a computer science degree to take the first step.</p>
+              <span class="card-number">03 / PROGRESS</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="explore-section section-pad" id="explore">
+        <div class="page-wrap">
+          <div class="explore-heading">
+            <div>
+              <span class="section-kicker">A good place to begin</span>
+              <h2>Little things, <span class="heading-light">made yours.</span></h2>
+            </div>
+            <p>Curious what you could host? Here are a few well-known open-source projects to explore.</p>
+          </div>
+          <div class="app-grid">
+            <a class="app-card" href="https://immich.app/" target="_blank" rel="noreferrer">
+              <span class="app-logo app-logo-photo" aria-hidden="true">
+                <svg viewBox="0 0 36 36" fill="none"><rect x="6" y="6" width="24" height="24" rx="8" stroke="currentColor" stroke-width="2.2" /><circle cx="14" cy="14" r="2.4" fill="currentColor" /><path d="m8 26 7-7 5 5 3-3 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </span>
+              <span class="app-type">PHOTOS & MEMORIES</span>
+              <strong>Immich</strong>
+              <span class="app-description">A home for your photos and videos.</span>
+              <span class="app-arrow" aria-label="Visit Immich">↗</span>
+            </a>
+            <a class="app-card" href="https://jellyfin.org/" target="_blank" rel="noreferrer">
+              <span class="app-logo app-logo-media" aria-hidden="true">
+                <svg viewBox="0 0 36 36" fill="none"><path d="M18 5.5 31 28H5L18 5.5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" /><path d="m16 13 8 5-8 5V13Z" fill="currentColor" /></svg>
+              </span>
+              <span class="app-type">MOVIES & MUSIC</span>
+              <strong>Jellyfin</strong>
+              <span class="app-description">Enjoy your own media library.</span>
+              <span class="app-arrow" aria-label="Visit Jellyfin">↗</span>
+            </a>
+            <a class="app-card" href="https://nextcloud.com/" target="_blank" rel="noreferrer">
+              <span class="app-logo app-logo-files" aria-hidden="true">
+                <svg viewBox="0 0 36 36" fill="none"><path d="M11 25.5a6.5 6.5 0 0 1-.7-13 8 8 0 0 1 15.5 2 5.5 5.5 0 0 1-.3 11H11Z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /><path d="M18 17v11m-4-4 4 4 4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </span>
+              <span class="app-type">FILES & SHARING</span>
+              <strong>Nextcloud</strong>
+              <span class="app-description">Keep files and collaboration close.</span>
+              <span class="app-arrow" aria-label="Visit Nextcloud">↗</span>
+            </a>
+            <a class="app-card" href="https://github.com/dani-garcia/vaultwarden" target="_blank" rel="noreferrer">
+              <span class="app-logo app-logo-password" aria-hidden="true">
+                <svg viewBox="0 0 36 36" fill="none"><rect x="7" y="15" width="22" height="16" rx="3" stroke="currentColor" stroke-width="2.2" /><path d="M12 15v-4a6 6 0 0 1 12 0v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /><circle cx="18" cy="22" r="2" fill="currentColor" /><path d="M18 24v3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>
+              </span>
+              <span class="app-type">PASSWORDS</span>
+              <strong>Vaultwarden</strong>
+              <span class="app-description">An alternative server for Bitwarden clients.</span>
+              <span class="app-arrow" aria-label="Visit Vaultwarden">↗</span>
+            </a>
+          </div>
+          <p class="app-disclaimer">
+            These are independent projects, not recommendations or endorsements. Check each project’s documentation and security practices before use.
+          </p>
+        </div>
+      </section>
+
+      <section class="start-section section-pad" id="getting-started">
+        <div class="page-wrap start-layout">
+          <div class="start-copy">
+            <span class="section-kicker">No need to do it all at once</span>
+            <h2>Start small.<br><span class="heading-light">Stay curious.</span></h2>
+            <p>Self-hosting is a journey, not a weekend checklist. Pick one thing you care about and learn what it takes to bring it home.</p>
+            <a class="button button-dark" href="https://github.com/ModernSelfHost/Site" target="_blank" rel="noreferrer">
+              Explore Modern Self Host
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+          <div class="steps">
+            <article class="step">
+              <span class="step-number">01</span>
+              <div><h3>Pick something you already use</h3><p>Photos, movies, files — begin with a service that matters to you.</p></div>
+              <span class="step-mark">↗</span>
+            </article>
+            <article class="step">
+              <span class="step-number">02</span>
+              <div><h3>Get to know the options</h3><p>Compare projects, read their requirements, and understand the trade-offs.</p></div>
+              <span class="step-mark">↗</span>
+            </article>
+            <article class="step">
+              <span class="step-number">03</span>
+              <div><h3>Make a plan that fits you</h3><p>Think about hardware, backups, updates, and how you’ll access your service.</p></div>
+              <span class="step-mark">↗</span>
+            </article>
+            <article class="step">
+              <span class="step-number">04</span>
+              <div><h3>Learn one step at a time</h3><p>Follow the project’s official documentation and build at your own pace.</p></div>
+              <span class="step-mark">↗</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section">
+        <div class="page-wrap faq-layout">
+          <div>
+            <span class="section-kicker">A few first questions</span>
+            <h2>Curiosity<br>looks good on you.</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>What does “self-hosting” mean?<span></span></summary>
+              <p>It means running an application or service on hardware you control, rather than relying solely on a hosted service. That might be a computer at home or a rented server.</p>
+            </details>
+            <details>
+              <summary>Do I need technical experience?<span></span></summary>
+              <p>A little curiosity helps, but you can start by exploring projects and learning their requirements. The right first project depends on your comfort level and what you want to host.</p>
+            </details>
+            <details>
+              <summary>Is self-hosting automatically more secure?<span></span></summary>
+              <p>No. Running a service yourself means you’re responsible for keeping it updated, protecting access, and maintaining backups. Understand the risks before putting sensitive data or services online.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing page-wrap">
+        <div class="closing-card">
+          <div class="closing-spark" aria-hidden="true">✳</div>
+          <span class="section-kicker">A little more yours</span>
+          <h2>Make room for<br>your own internet.</h2>
+          <p>One app. One small step. A digital life that feels a little more like yours.</p>
+          <a class="button button-dark" href="#explore">
+            Find a place to begin
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <div class="closing-stamp" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs><path id="stamp-circle" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0" /></defs>
+              <text><textPath href="#stamp-circle">A MORE PERSONAL INTERNET · A MORE PERSONAL INTERNET · </textPath></text>
+            </svg>
+            <span>✳</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer page-wrap">
+      <a class="brand footer-brand" href="#" aria-label="Modern Self Host home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none">
+            <path d="M18 3.5 31 11v14L18 32.5 5 25V11L18 3.5Z" fill="currentColor" />
+            <path d="m12 18 4 4 8-9" stroke="#F7F8F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <span>modern<span class="brand-light">selfhost</span></span>
+      </a>
+      <span class="footer-note">Make the internet a little more yours.</span>
+      <a class="footer-link" href="https://github.com/ModernSelfHost/Site" target="_blank" rel="noreferrer">
+        An open project on GitHub
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </footer>
+  </body>
+</html>
